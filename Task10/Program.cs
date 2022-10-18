@@ -24,4 +24,3 @@ else
     int secondDigit = SecondDigit(num);
     Console.WriteLine($"{secondDigit}");
 }
-
