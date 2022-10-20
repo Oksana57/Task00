@@ -2,17 +2,23 @@
 // принимает на вход число (N) и выдаёт таблицу
 // квадратов чисел от 1 до N.
 
-Console.WriteLine("Введите число");
-int num = Convert.ToInt32(Console.ReadLine());
-
 void Table(int number)
 {
+    if(number>0)
+    {
     int count = 1;
     while (count <= number)
     {
-        Console.WriteLine($"{count}   {count * count}");
+        Console.WriteLine($"{count,10}   {count * count, 10}");
         count++;
     }
+    }
+    else Console.WriteLine("некорректное число");
 }
 
-Table(num);
+Console.WriteLine("Введите число");
+int num = Convert.ToInt32(Console.ReadLine());
+if(num>0) Table(num);
+
+else Console.WriteLine("некорректное число");
+
