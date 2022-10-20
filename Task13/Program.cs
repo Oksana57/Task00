@@ -5,6 +5,7 @@
 
 int ThirdDigit(int number)
 {
+    // number = Math.Abs(number);
     while (number >= 1000)
     {
        number = number / 10;
