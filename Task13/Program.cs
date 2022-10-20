@@ -15,6 +15,7 @@ int ThirdDigit(int number)
 Console.WriteLine("Введите число");
 int num = Convert.ToInt32(Console.ReadLine());
 
+num = Math.Abs(num);
 if(num<100)
 { 
     Console.WriteLine("Третьей цифры нет");
