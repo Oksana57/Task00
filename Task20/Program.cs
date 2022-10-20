@@ -28,12 +28,6 @@ int x2 = Convert.ToInt32(Console.ReadLine());
 Console.Write("y2: ");
 int y2 = Convert.ToInt32(Console.ReadLine());
 
-// double Distance(int xa, int ya, int xb, int yb)
-// {
-// double d = Math.Sqrt(((xa-xb)*(xa-xb))+((ya-yb)*(ya-yb)));
-// return d;
-// }
-
 double distance =  Distance(x1, y1, x2, y2);
 
 Console.WriteLine($"расстояние между точками А и B = {Math.Round(distance, 2, MidpointRounding.ToZero)}");
