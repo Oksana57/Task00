@@ -4,16 +4,16 @@
 
 void Table(int number)
 {
-    if(number>0)
-    {
+    // if(number>0)
+    // {
     int count = 1;
     while (count <= number)
     {
         Console.WriteLine($"{count,10}   {count * count, 10}");
         count++;
     }
-    }
-    else Console.WriteLine("некорректное число");
+    // }
+    // else Console.WriteLine("некорректное число");
 }
 
 Console.WriteLine("Введите число");
