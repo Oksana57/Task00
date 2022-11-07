@@ -19,5 +19,9 @@ int Sumnumbers(int number)
     return sum;
 }
 
+if(num>0)
+{
 int sumnumbers = Sumnumbers(num);
 Console.WriteLine($"Сумма чисел от 1 до {num} = {sumnumbers}");
+}
+else Console.WriteLine("Введено некорреконое число, требуется целое положительное число");
