@@ -4,7 +4,7 @@
 // 78 -> 2
 // 89126 -> 5
 
-int Number (int num)
+int Countdigit (int num)
 {
     int count= 0;
     while(num > 0)
@@ -18,5 +18,5 @@ int Number (int num)
 Console.WriteLine("Введите число: ");
 int number = Math.Abs(Convert.ToInt32(Console.ReadLine()));
 
-int num = Number(number);
-Console.WriteLine($"Количество цифр чмсла {number} равно {num}");
+int countdigit = Countdigit(number);
+Console.WriteLine($"Количество цифр чмсла {number} равно {countdigit}");
