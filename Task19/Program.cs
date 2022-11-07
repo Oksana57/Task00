@@ -16,6 +16,10 @@ void Palindrome(int number)
         int number4 = number / 10 % 10;
 
         if (number1 == number5 && number2 == number4)
+        // int temporary = number1;
+        // number1 = number5;
+        // number5 = temporary;
+
         {
             Console.WriteLine("Да");
         }
@@ -26,6 +30,7 @@ void Palindrome(int number)
 Console.WriteLine("Введите пятизнаяное число: ");
 int num = Convert.ToInt32(Console.ReadLine());
 num = Math.Abs(num);
+
 
 Palindrome(num);
 
