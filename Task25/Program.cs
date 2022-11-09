@@ -4,12 +4,12 @@
 
 int Degree(int a, int b)
 {
-   int deg = a;
-   for(int i=1;i<b;i++)
+   int res = 1;
+   for(int i=1;i<=b;i++)
     {
-        deg = deg*a;
+        res = res*a;
     }
-    return deg;
+    return res;
 }
 
 Console.WriteLine("Введите число А:");
