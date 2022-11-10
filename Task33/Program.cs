@@ -43,4 +43,5 @@ return false;
  int num = Convert.ToInt32(Console.ReadLine());
 
  bool digit = Digit(arr, num);
- Console.WriteLine($"{digit}");
+//  Console.WriteLine($"{digit}");
+Console.WriteLine(digit?"Да" : "Нет");
