@@ -1,4 +1,4 @@
-﻿int Degree(int a, int b)
+﻿double Degree(int a, int b)
 {
    int resdeg = 1;
    int res = 0;
@@ -7,7 +7,7 @@
          resdeg = resdeg*a;
     }
     if (b>0) res = resdeg;
-    else res = 1/resdeg;
+    else res = (double) 1/resdeg;
         // else res = resdeg;
     
     return res;
@@ -19,6 +19,6 @@ Console.WriteLine("Введите число B:");
 int y = Convert.ToInt32(Console.ReadLine());
 
 
-    int degree = Degree(x, y);
+    double degree = Degree(x, y);
     Console.WriteLine($"{degree}");
 
