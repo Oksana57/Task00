@@ -41,4 +41,4 @@ int PositivEven(int [] array)
 int [] arr = CreteArrayRndInt(6, 100, 999);
  PrintArray(arr);
  int positivEven = PositivEven(arr);
- Console.WriteLine($"Количество трехзначных четных числе в массиве = {positivEven}");
+ Console.WriteLine($"Количество четных числе в массиве = {positivEven}");
