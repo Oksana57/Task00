@@ -1,13 +1,13 @@
 ﻿double Degree(int a, int b)
 {
-   int resdeg = 1;
-   int res = 0;
+   double resdeg = 1;
+   double res = 0;
    for(int i=1;i<=b;i++)
     {
          resdeg = resdeg*a;
     }
     if (b>0) res = resdeg;
-    else res = (double) 1/resdeg;
+    else res = 1/resdeg;
         // else res = resdeg;
     
     return res;

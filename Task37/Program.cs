@@ -5,50 +5,30 @@
 // [6 7 3 6] -> 36 21
 
 
-int[] CreteArrayRndInt(int size,int min, int max)
+int[] CreteArrayRndInt(int size, int min, int max)
 {
-    int[]array = new int[size];
+    int[] array = new int[size];
     Random rnd = new Random();
-    for(int i =0; i < size; i++)
+    for (int i = 0; i < size; i++)
     {
-        array [i] = rnd.Next(min, max+1);
+        array[i] = rnd.Next(min, max + 1);
     }
     return array;
 }
 
-void PrintArray(int [] array)
+void PrintArray(int[] array)
 {
     Console.Write("[");
-    for(int i=0; i<array.Length; i++)
+    for (int i = 0; i < array.Length; i++)
     {
-        if(i<array.Length -1) Console.Write($"{array[i]}, ");
+        if (i < array.Length - 1) Console.Write($"{array[i]}, ");
         else Console.Write($"{array[i]}");
     }
 
- Console.WriteLine("]");
- }
-
-int MultiplicationElements(int[]array)
-{
-    int size = array.Length/2;
-    if(array.Length%2==1) size = size +1;
-    int[]newArray = new int [size];
-    for(int i=0; i<size; i++)
-    {
-      newArray[i] = array[i]*array[array.Length-1-i];
-
-    }
-    if(array.Length%2==1) newArray [size-1] = array[array.Length/2];
-    return newArray;
+    Console.WriteLine("]");
 }
 
-  int [] arr = CreteArrayRndInt(5, 1, 9);
- PrintArray(arr);
-
-int newarr = MultiplicationElements(arr);
- PrintArray(newarr);
-
-// int[] MulplicationElements(int[] array)
+// int MultiplicationElements(int[] array)
 // {
 //     int size = array.Length / 2;
 //     if (array.Length % 2 == 1) size = size + 1;
@@ -62,12 +42,32 @@ int newarr = MultiplicationElements(arr);
 //     if (array.Length % 2 == 1) newArray[newArray.Length - 1] = array[array.Length / 2];
 //     return newArray;
 // }
-
-// int[] arr = CreateArrayRndInt(4, 1, 9);
+// int[] arr = CreteArrayRndInt(5, 1, 9);
 // PrintArray(arr);
 
-// int[] newArr = MulplicationElements(arr);
-// PrintArray(newArr);
+// int newarr = MultiplicationElements(arr);
+// PrintArray(newarr);
+
+int[] MulplicationElements(int[] array)
+{
+    int size = array.Length / 2;
+    if (array.Length % 2 == 1) size = size + 1;
+    int[] newArray = new int[size];
+
+    for (int i = 0; i < size; i++)
+    {
+        newArray[i] = array[i] * array[array.Length - 1 - i];
+    }
+
+    if (array.Length % 2 == 1) newArray[newArray.Length - 1] = array[array.Length / 2];
+    return newArray;
+}
+
+int[] arr = CreteArrayRndInt(5, 1, 9);
+PrintArray(arr);
+
+int[] newArr = MulplicationElements(arr);
+PrintArray(newArr);
 
 // int[] CreateProdArray(int[] arr)
 // {
