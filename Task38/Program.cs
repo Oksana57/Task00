@@ -31,7 +31,7 @@ double MinDigit(double[] array)
     double mindigit = array[i];
     while (i < array.Length)
     {
-        
+
         if (array[i] < mindigit) mindigit = array[i];
         i++;
     }
