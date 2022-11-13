@@ -25,6 +25,7 @@ void PrintArray(double[] array)
     Console.WriteLine("]");
 }
 
+
 double MinDigit(double[] array)
 {
     int i = 0;
@@ -42,8 +43,9 @@ double MaxDigit(double[] array)
 {
     int i = 0;
     double maxdigit = array[i];
-    while (i < array.Length)
+   while (i < array.Length)
     {
+
         if (array[i] > maxdigit) maxdigit = array[i];
         i++;
     }
@@ -55,6 +57,9 @@ double[] arr = CreateArrayRndDouble(5, -100, 100);
 PrintArray(arr);
 double minDigit = MinDigit(arr);
 double maxDigit = MaxDigit(arr);
+// Console.WriteLine($"Минимальное число в массиве = {minDigit}");
+// Console.WriteLine($"Максимальное число в массиве = {maxDigit}");
+
 
 void SumMinMax(double min, double max)
 {
@@ -65,8 +70,4 @@ void SumMinMax(double min, double max)
     Console.WriteLine($"Сумма минимального и максимального значения массива = {sum}");
 }
 SumMinMax(minDigit, maxDigit);
-// double sumMinMax = SumMinMax(arr)
-// double minDigit = MinDigit(arr);
-// Console.WriteLine($"Минимальное число в массиве = {minDigit}");
-// double maxDigit = MaxDigit(arr);
-// Console.WriteLine($"Максимальное число в массиве = {maxDigit}");
+
