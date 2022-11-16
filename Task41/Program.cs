@@ -10,7 +10,7 @@ int [] InputDigit(int m)
     int[]array = new int [size];
     for(int i=0; i<size;i++)
     {
-        Console.WriteLine("Введите количество число ");
+        Console.WriteLine("Введите число ");
         array[i] = Convert.ToInt32(Console.ReadLine());
     }
 return array;
