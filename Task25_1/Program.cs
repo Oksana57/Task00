@@ -1,4 +1,4 @@
-﻿double Degree(int a, int b)
+﻿double Degree(double a, double b)
 {
     double resdeg = 1;
     double res = 0;
@@ -7,7 +7,7 @@
         resdeg = resdeg * a;
     }
     if (b > 0) res = resdeg;
-    else res = (double)1 / resdeg;
+    else res = 1 / resdeg;
     // else res = resdeg;
 
     return res;

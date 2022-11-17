@@ -40,4 +40,4 @@ int PositivDigit(int[]array)
 int [] inputdigit = InputDigit(5 );
 PrintArray(inputdigit);
 int positivDigit = PositivDigit(inputdigit);
-Console.WriteLine($"Количество числе больше ноля = {positivDigit}");
+Console.WriteLine($"Количество чисел больше ноля = {positivDigit}");
