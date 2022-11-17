@@ -51,7 +51,16 @@ for (int i = 0; i < length; i++)
 return sum;
 }
 
-int[,] creatmatrixrndint = CreatMatrixRndInt(3, 4, -10, 10);
+Console.WriteLine("Введите m ");
+int m = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Введите n");
+int n = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Введите min ");
+int min = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Введите max");
+int max = Convert.ToInt32(Console.ReadLine());
+
+int[,] creatmatrixrndint = CreatMatrixRndInt(m,n,min,max);
 PrintArray(creatmatrixrndint);
 Console.WriteLine();
 int sumIndexDiagonal = SumIndexDiagonal(creatmatrixrndint);
