@@ -40,17 +40,18 @@ void PrintArray(int[,] matrix)
 
 double[] AritmeticMeanMatrix(int[,] matrix)
 {
-    int sumJ = 0;
-    double result = 0;
+    // int sumJ = 0;
+    // double result = 0;
     double[] array = new double[matrix.GetLength(1)];
     int x = 0;
     for (int j = 0; j < matrix.GetLength(1); j++)
     {
+        double sumJ = 0;
         for (int i = 0; i < matrix.GetLength(0); i++)
         {
             sumJ = sumJ + matrix[i, j];
         }
-        result = sumJ / matrix.GetLength(0);
+        double result = sumJ / matrix.GetLength(0);
         array[x] = Math.Round(result, 1);
         x++;
     }
@@ -58,9 +59,21 @@ double[] AritmeticMeanMatrix(int[,] matrix)
     return array;
 }
 
+void PrintArr(double[] array)
+{
+    Console.Write("[");
+    for (int i = 0; i < array.Length; i++)
+    {
+        if (i < array.Length - 1) Console.Write($"{array[i]}; ");
+        else Console.Write($"{array[i]}");
+    }
+    Console.WriteLine("]");
+}
+
 
 int[,] creatmatrixrndint = CreatMatrixRndInt(3, 4, 1, 10);
 PrintArray(creatmatrixrndint);
 Console.WriteLine();
 double[] aritmeticMeanMatrix = AritmeticMeanMatrix(creatmatrixrndint);
-Console.WriteLine($"Среднеарифметическое по столбцам = {aritmeticMeanMatrix}");
+// PrintArr(aritmeticMeanMatrix);
+Console.Write($"Среднеарифметическое по столбцам = "); PrintArr(aritmeticMeanMatrix);

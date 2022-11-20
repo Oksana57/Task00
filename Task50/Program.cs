@@ -35,13 +35,10 @@ void PrintArray(int[,] matrix)
             else Console.Write($"{matrix[i, j],5} | ");
         }
         Console.WriteLine("|");
-        // if (i < array.Length - 1) Console.Write($"{array[i]}, ");
-        // else Console.Write($"{array[i]}");
+       
     }
 
 }
-
-
 
 void MiningIndexMatrix(int[,] matrix)
 {
