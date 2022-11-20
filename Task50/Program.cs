@@ -35,7 +35,7 @@ void PrintArray(int[,] matrix)
             else Console.Write($"{matrix[i, j],5} | ");
         }
         Console.WriteLine("|");
-       
+
     }
 
 }
@@ -46,19 +46,13 @@ void MiningIndexMatrix(int[,] matrix)
     int a = Convert.ToInt32(Console.ReadLine());
     Console.WriteLine("Введите столбец позиции элемента");
     int b = Convert.ToInt32(Console.ReadLine());
-    if(a>matrix.GetLength(0)||b>matrix.GetLength(1)) Console.WriteLine("Такого элемента в массиве нет");
-else
-    for (int i = 0; i < matrix.GetLength(0); i++)
-    {
-        for (int j = 0; j < matrix.GetLength(1); j++)
-        {
+    if (a > matrix.GetLength(0) || b > matrix.GetLength(1)) Console.WriteLine("Такого элемента в массиве нет");
+    else
             
-            if (a == i && b == j) Console.WriteLine($"Значение элемента = {matrix[i, j]}");
-            
-        }
+             Console.WriteLine($"Значение элемента = {matrix[a, b]}");
 
-    }
 }
+
 
 
 int[,] creatmatrixrndint = CreatMatrixRndInt(3, 4, 1, 20);
