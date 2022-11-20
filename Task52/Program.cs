@@ -46,12 +46,12 @@ double[] AritmeticMeanMatrix(int[,] matrix)
     int x = 0;
     for (int j = 0; j < matrix.GetLength(1); j++)
     {
-        double sumJ = 0;
+        int sumJ = 0;
         for (int i = 0; i < matrix.GetLength(0); i++)
         {
             sumJ = sumJ + matrix[i, j];
         }
-        double result = sumJ / matrix.GetLength(0);
+        double result = (double) sumJ / matrix.GetLength(0);
         array[x] = Math.Round(result, 1);
         x++;
     }
