@@ -31,51 +31,36 @@ void PrintArray(int[,] matrix)
         {
 
             if (i < matrix.GetLength(1) - 1) Console.Write($"{matrix[i, j],5} ");
-            else Console.Write($"{matrix[i, j],5} | ");
+            else Console.Write($"{matrix[i, j],5} ");
         }
         Console.WriteLine("|");
     }
 
 }
 
-double AritmeticMeanMatrix(int[,] matrix)
+double[] AritmeticMeanMatrix(int[,] matrix)
 {
-    double sumJ = 0;
+    int sumJ = 0;
     double result = 0;
-    // double[]array = new double(matrix.GetLength(1));
-    // while (j< matrix.GetLength(1))
-
+    double[] array = new double[matrix.GetLength(1)];
+    int x = 0;
     for (int j = 0; j < matrix.GetLength(1); j++)
     {
-        while (j < matrix.GetLength(1))
+        for (int i = 0; i < matrix.GetLength(0); i++)
         {
-            for (int i = 0; i < matrix.GetLength(0); i++)
-            {
-                // while (j < matrix.GetLength(1))
-                {
-                    sumJ = sumJ + matrix[i, j];
-                }
-                sumJ = sumJ / 2;
-                result = Math.Round(sumJ, 1);
-            }
-            Console.WriteLine($"{result}");
+            sumJ = sumJ + matrix[i, j];
+        }
+        result = sumJ / matrix.GetLength(0);
+        array[x] = Math.Round(result, 1);
+        x++;
     }
-    
+
+    return array;
 }
-// return new double[] {result};
-}
 
 
-Console.WriteLine("Введите m ");
-int m = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine("Введите n");
-int n = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine("Введите min ");
-int min = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine("Введите max");
-int max = Convert.ToInt32(Console.ReadLine());
-
-int[,] creatmatrixrndint = CreatMatrixRndInt(m, n, min, max);
+int[,] creatmatrixrndint = CreatMatrixRndInt(3, 4, 1, 10);
 PrintArray(creatmatrixrndint);
-
-double aritmeticMeanMatrix = AritmeticMeanMatrix(creatmatrixrndint);
+Console.WriteLine();
+double[] aritmeticMeanMatrix = AritmeticMeanMatrix(creatmatrixrndint);
+Console.WriteLine($"Среднеарифметическое по столбцам = {aritmeticMeanMatrix}");
