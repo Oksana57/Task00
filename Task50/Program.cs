@@ -46,10 +46,12 @@ void MiningIndexMatrix(int[,] matrix)
     int a = Convert.ToInt32(Console.ReadLine());
     Console.WriteLine("Введите столбец позиции элемента");
     int b = Convert.ToInt32(Console.ReadLine());
-    if (a > matrix.GetLength(0) || b > matrix.GetLength(1)) Console.WriteLine("Такого элемента в массиве нет");
+    if (a >=0 && a < matrix.GetLength(0) && b >=0 && b< matrix.GetLength(1)) Console.WriteLine($"Значение элемента = {matrix[a, b]}");
     else
-            
-             Console.WriteLine($"Значение элемента = {matrix[a, b]}");
+    Console.WriteLine("Такого элемента в массиве нет");
+    // if (a < 0 || b < 0) Console.WriteLine($"Введено некорректное число");
+    // else
+        // Console.WriteLine($"Значение элемента = {matrix[a, b]}");
 
 }
 
