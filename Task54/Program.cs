@@ -35,7 +35,7 @@ void PrintMatrix(int[,] matrix)
         {
             // Console.Write($"{matrix[i, j]}");
             if (i < matrix.GetLength(1) - 1) Console.Write($"{matrix[i, j],5} ");
-            else Console.Write($"{matrix[i, j],5}");
+            else Console.Write($"{matrix[i, j],5} ");
         }
         Console.WriteLine("|");
 
@@ -43,32 +43,36 @@ void PrintMatrix(int[,] matrix)
 
 }
 
-int[,] DecreaseMatrix(int[,]matrix)
+int[,] DecreaseMatrix(int[,] matrix)
 {
-// int [,] newmatrix = new int [CreatMatrixRndInt.Length];
-int i =0;
-int j =0;
-int max = matrix[i, j];
-for (i = 0; i < matrix.GetLength(0); i++)
-    //  int max = matrix[i,j];
+
+    for (int i = 0; i < matrix.GetLength(0); i++)
     {
-        for  (j = 1; j < matrix.GetLength(1); j++)
+        for (int j = 0; j < matrix.GetLength(1); j++)
         {
-            if(matrix[i,j]>max) matrix[i,j]=matrix[i,j-1];
+            for (int k = 0; k < matrix.GetLength(1) - 1; k++)
             {
-            // int temp = max;
-            // max = matrix[i,j]; 
-            // matrix[i,j] = temp;
+
+                if (matrix[i, k] < matrix[i, k + 1])
+                {
+                    int temp = matrix[i, k];
+                    matrix[i, k] = matrix[i, k + 1];
+                    matrix[i, k + 1] = temp;
+
+                }
+
+
             }
-            matrix[i,j] = matrix[i,matrix.GetLength(1)-1];
-            // matrix[i, j] = rnd.Next(min, max + 1);
+
         }
     }
     return matrix;
 }
 
-int[,] creatmatrixrndint = CreatMatrixRndInt(3, 3, 1, 20);
+
+
+int[,] creatmatrixrndint = CreatMatrixRndInt(4, 4, 1, 20);
 PrintMatrix(creatmatrixrndint);
 Console.WriteLine();
-int [,] decreasematrix = DecreaseMatrix(creatmatrixrndint);
+int[,] decreasematrix = DecreaseMatrix(creatmatrixrndint);
 PrintMatrix(decreasematrix);
