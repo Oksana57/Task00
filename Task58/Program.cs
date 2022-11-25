@@ -43,28 +43,32 @@ void PrintMatrix(int[,] matrix)
 
 int[,] CompositionTwoMatrix (int[,]matrixA,int[,]martixB)
 {
-    // int [,] matrixA = CreatMatrixRndInt(3, 2, 1, 20);
-    // int [,] matrixB = CreatMatrixRndInt(2, 3, 1, 20);
     int [,] newmatrix = new int [matrixA.GetLength(0), martixB.GetLength(1)];
     for(int i =0; i<newmatrix.GetLength(0);i++)
     {
         for(int j =0;j<newmatrix.GetLength(1);j++)
         {
-            newmatrix[i,j]=((matrixA[i,j]*matrixB[i,j])+(matrixA[i,j+1]*martixB[i+1.j]));
+            for(int k=0; k< matrixA.GetLength(1);k++)
+            {
+            newmatrix[i,j]+=(matrixA[i,k]*martixB[k,j]);
         }
     }
+    }
+    return newmatrix;
+    }
 
-return newmatrix;
-}
 
-int[,] matrixA = CreatMatrixRndInt(3, 2, 1, 20);
+int[,] matrixA = CreatMatrixRndInt(2, 2, 1, 20);
 int[,] matrixB = CreatMatrixRndInt(2, 3, 1, 20);
-int[,] compositionTwoMatrix = CompositionTwoMatrix(matrixA, matrixB);
 
-int[,] creatmatrixrndint = CreatMatrixRndInt(3, 3, 1, 20);
-PrintMatrix(compositionTwoMatrix);
+
+if(matrixA.GetLength(0)==matrixB.GetLength(1))
+{
+PrintMatrix(matrixA);
 Console.WriteLine();
-
-
-// int[,] decreasematrix = DecreaseMatrix(creatmatrixrndint);
-// PrintMatrix(decreasematrix);
+PrintMatrix(matrixB);
+Console.WriteLine();
+int[,] compositionTwoMatrix = CompositionTwoMatrix(matrixA,matrixB);
+PrintMatrix(compositionTwoMatrix);
+}
+else Console.WriteLine("Мартицы перемножить нельзя"); 
